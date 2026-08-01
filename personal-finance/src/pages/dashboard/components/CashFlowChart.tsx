@@ -9,7 +9,7 @@ interface CashFlowChartProps {
 }
 
 export default function CashFlowChart({ data }: CashFlowChartProps) {
-  const formatTooltipValue = (value: number) => {
+  const formatTooltipValue = (value: any) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(value);
   };
 
@@ -65,7 +65,7 @@ export default function CashFlowChart({ data }: CashFlowChartProps) {
             />
 
             <Tooltip
-              formatter={(value: number) => [formatTooltipValue(value), ""]}
+              formatter={formatTooltipValue}
               contentStyle={{
                 borderRadius: '16px',
                 border: '1px solid #f1f5f9',

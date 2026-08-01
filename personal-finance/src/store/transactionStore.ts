@@ -22,7 +22,7 @@ interface TransactionState {
   deleteTransaction: (id: string) => Promise<boolean>;
 }
 
-export const useTransactionStore = create<TransactionState>((set, get) => ({
+export const useTransactionStore = create<TransactionState>((set) => ({
   transactions: [],
   isLoading: false,
   error: null,
